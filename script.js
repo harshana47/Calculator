@@ -63,7 +63,7 @@ function ml(){
     op = 3;
 }
 function dv(){
-    firstSave = document.getElementById("display").innerHTML;
+    firstSave = document.getElementById("display").innerHTML;//add value in display to firstsave variable  
     document.getElementById("display").innerHTML = "";
     op = 4;
 }
