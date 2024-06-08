@@ -11,22 +11,28 @@
         <h1>Calculator</h1>
         <input id="display" readonly>
         <div class="button-container">
+            <button class="operator" onclick="percent()">%</button>
+            <button class="operator" onclick="fn('*')">*</button>
+            <button class="operator" onclick="fn('/')">/</button>
+            <button class="special" onclick="feraser()">E</button>
+
             <button class="number" onclick="fn('7')">7</button>
             <button class="number" onclick="fn('8')">8</button>
             <button class="number" onclick="fn('9')">9</button>
-            <button class="operator" onclick="fn('/')">/</button>
+            <button class="operator" onclick="fn('-')">-</button>
+
             <button class="number" onclick="fn('4')">4</button>
             <button class="number" onclick="fn('5')">5</button>
             <button class="number" onclick="fn('6')">6</button>
-            <button class="operator" onclick="fn('*')">*</button>
+            <button class="operator" onclick="fn('+')">+</button>
+            
             <button class="number" onclick="fn('1')">1</button>
             <button class="number" onclick="fn('2')">2</button>
             <button class="number" onclick="fn('3')">3</button>
-            <button class="operator" onclick="fn('-')">-</button>
-            <button class="special" onclick="feraser()">E</button>
-            <button class="number" onclick="fn('0')">0</button>
+            
             <button class="special" onclick="clearDisplay()">AC</button>
-            <button class="operator" onclick="fn('+')">+</button>
+            <button class="number" onclick="fn('0')">0</button>
+            <button class="number" onclick="fn('.')">.</button>      
             <button class="operator" onclick="eq()">=</button>
         </div>
     </div>
