@@ -63,13 +63,9 @@ function ml(){
     op = 3;
 }
 function dv(){
-    firstSave = document.getElementById("display").innerHTML;//add value firstsave variable  
+    firstSave = document.getElementById("display").innerHTML;//firstsave variable ekata display wela  
     document.getElementById("display").innerHTML = "";
     op = 4;
-}
-function percent() {
-    let displayValue = document.getElementById("display").innerHTML;
-    document.getElementById("display").innerHTML = parseFloat(displayValue) / 100;
 }
 
 function eq(){
@@ -102,5 +98,10 @@ function clearDisplay() {
 function eq() {
     let expression = document.getElementById("display").value;
     let result = eval(expression);
+    document.getElementById("display").value = result;
+}
+function modulus() {
+    let expression = document.getElementById("display").value;
+    let result = eval(expression + "/100"); // Divide by 100 to get the percentage value
     document.getElementById("display").value = result;
 }
