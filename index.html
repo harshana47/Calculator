@@ -11,6 +11,9 @@
         <h1>Calculator</h1>
         <input id="display" readonly>
         <div class="button-container">
+            <button class="mode" onclick="toggleDarkMode()">
+                <img src="assets/images/img.png" alt="Dark Mode" />
+            </button>
             <!-- Top row -->
             <div class="top-row">
                 <button class="top3 circle" onclick="modulus()">%</button>
@@ -41,7 +44,7 @@
             </div>
             <!-- Bottom row -->
             <div class="bottom-row">
-                <button class="number circle">.</button>
+                <button class="number circle" onclick="fn('.')">.</button>
                 <button class="number circle" onclick="fn('0')">0</button>
                 <button class="special eq" onclick="eq()">=</button>
               

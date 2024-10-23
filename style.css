@@ -4,7 +4,7 @@ body {
 }
 .calculator {
     max-width: 300px;
-    margin: 0 auto;
+    margin: 90px auto;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
@@ -24,7 +24,48 @@ button {
     flex: 1 0 23%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Optional: add shadow for depth */
 }
+body.dark {
+    background-color: #121212;
+}
 
+.calculator.dark {
+    background-color: #1e1e1e;
+}
+
+h1.dark {
+    color: #ffffff;
+}
+.mode.dark{
+    background-color: #1e1e1e;
+}
+
+button.dark {
+    background-color: #333;
+    color: #ffffff;
+}
+.mode{
+    position: absolute;
+    top: 95px;
+    right: 0;
+    cursor: pointer;
+    left: 600px;
+    box-shadow: 0 0 0;
+    background: transparent;
+    width: 60px; /* Set a fixed width for circle */
+    height: 60px; /* Set a fixed height for circle */
+}
+#display.dark {
+    background-color: #333;
+    color: #ffffff;
+}
+button img {
+    width: 30px;  /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
+    top: 15px;
+    left: 16px;
+    position: absolute;
+    background-color: white;
+}
 /* Number button styles */
 button.number {
     background-color: #333;

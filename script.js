@@ -70,25 +70,35 @@ function dv(){
 
 function eq(){
     let secondSave = document.getElementById("display").innerHTML;
-    if(op == 1){
+    if(op === 1){
         document.getElementById("display").innerHTML = parseInt(firstSave) + parseInt(secondSave);
-    }else if(op == 2){
+    }else if(op === 2){
         document.getElementById("display").innerHTML = parseInt(firstSave) - parseInt(secondSave);
-    }else if(op == 3){
+    }else if(op === 3){
         document.getElementById("display").innerHTML = parseInt(firstSave) * parseInt(secondSave);
-    }else if(op == 4){
+    }else if(op === 4){
         document.getElementById("display").innerHTML = parseInt(firstSave) / parseInt(secondSave);
     }else{
         document.getElementById("display").innerHTML = "invalid";
     }
 }
 function fn(value) {
-    document.getElementById("display").value += value;
+    let display = document.getElementById("display");
+
+    if (value === '.') {
+        let parts = display.value.split(/[\+\-\*\/]/);
+        let lastPart = parts[parts.length - 1];
+
+        if (lastPart.includes('.')) return;
+    }
+
+    display.value += value;
 }
 
+
 function feraser() {
-    let displayValue = document.getElementById("display").value;
-    document.getElementById("display").value = displayValue.slice(0, -1);
+    let display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
 }
 
 function clearDisplay() {
@@ -97,11 +107,38 @@ function clearDisplay() {
 
 function eq() {
     let expression = document.getElementById("display").value;
-    let result = eval(expression);
-    document.getElementById("display").value = result;
+    try {
+        let result = eval(expression);
+        document.getElementById("display").value = result;
+    } catch (e) {
+        document.getElementById("display").value = "Error";
+    }
 }
+
 function modulus() {
     let expression = document.getElementById("display").value;
-    let result = eval(expression + "/100"); // Divide by 100 to get the percentage value
+    let result = eval(expression + "/100");
     document.getElementById("display").value = result;
 }
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+    document.querySelector('.calculator').classList.toggle('dark');
+    document.querySelector('h1').classList.toggle('dark');
+
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.classList.toggle('dark');
+    });
+
+    const display = document.getElementById("display");
+    display.classList.toggle('dark');
+
+    const modeButtonImage = document.querySelector('.mode img');
+    if (document.body.classList.contains('dark')) {
+        modeButtonImage.src = 'assets/images/img_5.png';
+    } else {
+        modeButtonImage.src = 'assets/images/img.png';
+    }
+}
+
