@@ -107,4 +107,34 @@ button.special {
     height: 60px; /* Set a fixed height for circle */
     border-radius: 40px;
 }
+.history {
+    background: white;
+    display: none;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin-left: 60.5%;
+    position: absolute;
+    top: 35%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Set a width for the history section */
+}
+.history h2 {
+    font-size: 1.5em;
+}
+.history ul {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px; /* Limit height */
+    overflow-y: auto; /* Scroll if too long */
+}
+.history li {
+    margin: 5px 0;
+}
+.historybtn{
+    position: absolute;
+    top: 95px;
+    right: 600px;
+    background-color: white;
+    box-shadow: 0 0 0;
+}
 

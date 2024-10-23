@@ -46,63 +46,29 @@ function feraser(){
 
 let firstSave;
 let op;
+let historyList = document.getElementById("historyList");
 
-function addition(){
-    firstSave = document.getElementById("display").innerHTML;
-    document.getElementById("display").innerHTML = "";
-    op = 1;
-}
-function mn(){
-    firstSave = document.getElementById("display").innerHTML;
-    document.getElementById("display").innerHTML = "";
-    op = 2;
-}
-function ml(){
-    firstSave = document.getElementById("display").innerHTML;
-    document.getElementById("display").innerHTML = "";
-    op = 3;
-}
-function dv(){
-    firstSave = document.getElementById("display").innerHTML;//firstsave variable ekata display wela  
-    document.getElementById("display").innerHTML = "";
-    op = 4;
-}
-
-function eq(){
-    let secondSave = document.getElementById("display").innerHTML;
-    if(op === 1){
-        document.getElementById("display").innerHTML = parseInt(firstSave) + parseInt(secondSave);
-    }else if(op === 2){
-        document.getElementById("display").innerHTML = parseInt(firstSave) - parseInt(secondSave);
-    }else if(op === 3){
-        document.getElementById("display").innerHTML = parseInt(firstSave) * parseInt(secondSave);
-    }else if(op === 4){
-        document.getElementById("display").innerHTML = parseInt(firstSave) / parseInt(secondSave);
-    }else{
-        document.getElementById("display").innerHTML = "invalid";
-    }
-}
 function fn(value) {
     let display = document.getElementById("display");
 
+    // Handle the decimal point
     if (value === '.') {
         let parts = display.value.split(/[\+\-\*\/]/);
         let lastPart = parts[parts.length - 1];
 
-        if (lastPart.includes('.')) return;
+        if (lastPart.includes('.')) return; // Prevent adding another decimal to the same number
     }
 
-    display.value += value;
+    display.value += value; // Append the value to the display
 }
-
 
 function feraser() {
     let display = document.getElementById("display");
-    display.value = display.value.slice(0, -1);
+    display.value = display.value.slice(0, -1); // Remove the last character
 }
 
 function clearDisplay() {
-    document.getElementById("display").value = "";
+    document.getElementById("display").value = ""; // Clear the display
 }
 
 function eq() {
@@ -110,15 +76,36 @@ function eq() {
     try {
         let result = eval(expression);
         document.getElementById("display").value = result;
+
+        // Add to history
+        addToHistory(`${expression} = ${result}`);
     } catch (e) {
         document.getElementById("display").value = "Error";
     }
 }
 
+function addToHistory(entry) {
+    let li = document.createElement("li");
+    li.textContent = entry;
+    historyList.appendChild(li); // Add the entry to the history list
+}
+
 function modulus() {
     let expression = document.getElementById("display").value;
-    let result = eval(expression + "/100");
+    let result = eval(expression) / 100; // Calculate percentage
     document.getElementById("display").value = result;
+
+    // Add to history
+    addToHistory(`${expression} % = ${result}`);
+}
+
+function toggleHistory() {
+    const historySection = document.getElementById("history");
+    if (historySection.style.display === "none" || historySection.style.display === "") {
+        historySection.style.display = "block"; // Show history
+    } else {
+        historySection.style.display = "none"; // Hide history
+    }
 }
 
 function toggleDarkMode() {
@@ -134,11 +121,16 @@ function toggleDarkMode() {
     const display = document.getElementById("display");
     display.classList.toggle('dark');
 
+    // Change the image source based on dark mode
     const modeButtonImage = document.querySelector('.mode img');
     if (document.body.classList.contains('dark')) {
-        modeButtonImage.src = 'assets/images/img_5.png';
+        modeButtonImage.src = 'assets/images/img_5.png'; // Dark mode image
     } else {
-        modeButtonImage.src = 'assets/images/img.png';
+        modeButtonImage.src = 'assets/images/img.png'; // Default image
     }
 }
+
+// Initialize history display as hidden
+document.getElementById("history").style.display = "none";
+
 
