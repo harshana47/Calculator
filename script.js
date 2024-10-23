@@ -51,7 +51,6 @@ let historyList = document.getElementById("historyList");
 function fn(value) {
     let display = document.getElementById("display");
 
-    // Handle the decimal point
     if (value === '.') {
         let parts = display.value.split(/[\+\-\*\/]/);
         let lastPart = parts[parts.length - 1];
@@ -64,11 +63,11 @@ function fn(value) {
 
 function feraser() {
     let display = document.getElementById("display");
-    display.value = display.value.slice(0, -1); // Remove the last character
+    display.value = display.value.slice(0, -1);
 }
 
 function clearDisplay() {
-    document.getElementById("display").value = ""; // Clear the display
+    document.getElementById("display").value = "";
 }
 
 function eq() {
@@ -77,7 +76,6 @@ function eq() {
         let result = eval(expression);
         document.getElementById("display").value = result;
 
-        // Add to history
         addToHistory(`${expression} = ${result}`);
     } catch (e) {
         document.getElementById("display").value = "Error";
@@ -87,24 +85,23 @@ function eq() {
 function addToHistory(entry) {
     let li = document.createElement("li");
     li.textContent = entry;
-    historyList.appendChild(li); // Add the entry to the history list
+    historyList.appendChild(li);
 }
 
 function modulus() {
     let expression = document.getElementById("display").value;
-    let result = eval(expression) / 100; // Calculate percentage
+    let result = eval(expression) / 100;
     document.getElementById("display").value = result;
 
-    // Add to history
     addToHistory(`${expression} % = ${result}`);
 }
 
 function toggleHistory() {
     const historySection = document.getElementById("history");
     if (historySection.style.display === "none" || historySection.style.display === "") {
-        historySection.style.display = "block"; // Show history
+        historySection.style.display = "block";
     } else {
-        historySection.style.display = "none"; // Hide history
+        historySection.style.display = "none";
     }
 }
 
