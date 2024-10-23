@@ -13,16 +13,16 @@ body {
 h1 {
     color: black;
     text-align: center;
-}/* General button styles */
+}
 button {
-    padding: 20px; /* Increase padding for circular shape */
+    padding: 20px;
     margin: 5px;
     font-size: 18px;
     border: none;
-    border-radius: 50%; /* Circular border radius */
+    border-radius: 50%;
     cursor: pointer;
     flex: 1 0 23%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Optional: add shadow for depth */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 body.dark {
     background-color: #121212;
@@ -51,22 +51,21 @@ button.dark {
     left: 600px;
     box-shadow: 0 0 0;
     background: transparent;
-    width: 60px; /* Set a fixed width for circle */
-    height: 60px; /* Set a fixed height for circle */
+    width: 60px;
+    height: 60px;
 }
 #display.dark {
     background-color: #333;
     color: #ffffff;
 }
 button img {
-    width: 30px;  /* Adjust width as needed */
-    height: 30px; /* Adjust height as needed */
+    width: 30px;
+    height: 30px;
     top: 15px;
     left: 16px;
     position: absolute;
     background-color: white;
 }
-/* Number button styles */
 button.number {
     background-color: #333;
     color: #fff;
@@ -75,7 +74,6 @@ button.top3{
     background-color: #615959;
     color: #fff;
 }
-/* Special function button styles */
 button.special {
     background-color: #FF9500;
     color: #fff;
@@ -92,19 +90,18 @@ button.special {
     width: 88%;
 }
 .long {
-    width: 100px; /* Adjust width as needed */
-    height: 60px; /* Set the height to match the circle buttons */
-    border-radius: 5px; /* Adjust border radius for the long button */
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
 }
 
-/* Circle button specific styles */
 .circle {
-    width: 60px; /* Set a fixed width for circle */
-    height: 60px; /* Set a fixed height for circle */
+    width: 60px;
+    height: 60px;
 }
 .eq{
-    width: 135px; /* Set a fixed width for circle */
-    height: 60px; /* Set a fixed height for circle */
+    width: 135px;
+    height: 60px;
     border-radius: 40px;
 }
 .history {
@@ -116,7 +113,7 @@ button.special {
     position: absolute;
     top: 35%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Set a width for the history section */
+    width: 200px;
 }
 .history h2 {
     font-size: 1.5em;
@@ -124,8 +121,8 @@ button.special {
 .history ul {
     list-style-type: none;
     padding: 0;
-    max-height: 300px; /* Limit height */
-    overflow-y: auto; /* Scroll if too long */
+    max-height: 300px;
+    overflow-y: auto;
 }
 .history li {
     margin: 5px 0;

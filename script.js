@@ -56,10 +56,10 @@ function fn(value) {
         let parts = display.value.split(/[\+\-\*\/]/);
         let lastPart = parts[parts.length - 1];
 
-        if (lastPart.includes('.')) return; // Prevent adding another decimal to the same number
+        if (lastPart.includes('.')) return;
     }
 
-    display.value += value; // Append the value to the display
+    display.value += value;
 }
 
 function feraser() {
@@ -121,16 +121,14 @@ function toggleDarkMode() {
     const display = document.getElementById("display");
     display.classList.toggle('dark');
 
-    // Change the image source based on dark mode
     const modeButtonImage = document.querySelector('.mode img');
     if (document.body.classList.contains('dark')) {
-        modeButtonImage.src = 'assets/images/img_5.png'; // Dark mode image
+        modeButtonImage.src = 'assets/images/img_5.png';
     } else {
-        modeButtonImage.src = 'assets/images/img.png'; // Default image
+        modeButtonImage.src = 'assets/images/img.png';
     }
 }
 
-// Initialize history display as hidden
 document.getElementById("history").style.display = "none";
 
 
